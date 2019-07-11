@@ -26,7 +26,7 @@ The solution contains three projects and a unit test for each project. The unit 
 2. Update ConfigureServices in *Startup* class.
 3. Create your model, *Portfolio* class, **ensuring you will add a primary key**.
 4. Create your own context, *MyContext* class, inherited from DbContext where you set your data set. This class will use your model.
-5. Create your repository class by injecting your context class. This class will have only one method, * * GetPortfolios()* *.
+5. Create your repository class by injecting your context class. This class will have only one method, * GetPortfolios()*.
 6. Creat your resourse in *PortfolioController*.
 
 ##### Steps for Dapper project:
@@ -70,7 +70,7 @@ Here the performance results are listed:
 
 By using Sql Server Json support, the  API call is very fast because you do not need any class mapping and no extra code to add.
 
-These are the results for the * *GetPortfolios()* * calling:
+These are the results for the *GetPortfolios()* calling:
 
   Type  | Entity Framework Core | Dapper | Sql Server Json Support
 ------- | --------------------- | ------ |--------------------------
