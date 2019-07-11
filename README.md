@@ -2,7 +2,7 @@
 
 ### Intro
 Which is the best way in terms of effort and performance to expose data in Json format? I will show you a comparison between two most common ORMs: **EntityFrameworkCore** and **Dapper**. Finally, I will show the performance by retrieving Json data directly from SQL Server. In fact, starting from Sql Server 2016 there is native support for JSON. A complete guide can be found [here](https://docs.microsoft.com/en-us/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-2017). 
-I will show you just a simple example of GET with three different methods.
+I will show you just a simple example of GET in three different ways.
 
 
 ### Content
@@ -68,11 +68,9 @@ Here the performance results are listed:
 ![JsonPath in Postman](https://github.com/skepee/Orm-Compare/blob/master/screenshots/PostmanJsonPath.png)
 
 
-By using Sql Server Json support, the  API call is vry fast because you do not need any class mapping and no extra code.
+By using Sql Server Json support, the  API call is very fast because you do not need any class mapping and no extra code to add.
 
-These are the results only for the * * GetPortfolios()* * calling:
-#### CPU %
-
+These are the results for the * *GetPortfolios()* * calling:
 
   Type  | Entity Framework Core | Dapper | Sql Server Json Support
 ------- | --------------------- | ------ |--------------------------
@@ -83,7 +81,7 @@ These are the results only for the * * GetPortfolios()* * calling:
 
 
 ### Conclusions
-This is just a very simple example showing us that by using the Json native support we can have many benefits:
+In this very simple example a ORM perfomance comparison has been shown. By using Sql Server Json native support we can have many benefits:
 1. No NuGet package to install.
 2. No extra code to add (repository, context).
 3. No mapping class needed (then no CPU time spent).
