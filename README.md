@@ -57,7 +57,7 @@ Here the performance results are listed:
 
 ### Timing comparison by using Postman
 ##### Entity Framework in Postman
-![Entity Framework in Postman](https://github.com/skepee/Orm-Compare/blob/master/screenshots/PostmanEF.png)
+![Entity Framework in Postman](https://github.com/skepee/Orm-Compare/blob/master/screenshots/PostmanEFC.png)
 
 ##### Dapper in Postman
 ![Dapper in Postman](https://github.com/skepee/Orm-Compare/blob/master/screenshots/PostmanDapper.png)
