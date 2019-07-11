@@ -55,20 +55,24 @@ Here the performance results are listed:
 
 
 
-### Timing comparison by using Postman
+### Timing comparison with Postman
 ##### Entity Framework in Postman
 ![Entity Framework in Postman](https://github.com/skepee/Orm-Compare/blob/master/screenshots/PostmanEFC.png)
 
+
 ##### Dapper in Postman
 ![Dapper in Postman](https://github.com/skepee/Orm-Compare/blob/master/screenshots/PostmanDapper.png)
+
 
 ##### Json Path in Postman
 ![JsonPath in Postman](https://github.com/skepee/Orm-Compare/blob/master/screenshots/PostmanJsonPath.png)
 
 
 By using Sql Server Json support, the  API call is vry fast because you do not need any class mapping and no extra code.
-Compare these results: 
+
+These are the results only for the * * GetPortfolios()* * calling:
 #### CPU %
+
 
   Type  | Entity Framework Core | Dapper | Sql Server Json Support
 ------- | --------------------- | ------ |--------------------------
@@ -77,7 +81,8 @@ Compare these results:
 
 
 
-### Final conclusions
+
+### Conclusions
 This is just a very simple example showing us that by using the Json native support we can have many benefits:
 1. No NuGet package to install.
 2. No extra code to add (repository, context).
