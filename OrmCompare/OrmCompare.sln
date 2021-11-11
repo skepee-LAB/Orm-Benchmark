@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31829.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonDapper", "JsonDapper\JsonDapper.csproj", "{4D432F06-DA94-40D3-AAA7-F847144E03C5}"
 EndProject
@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonPath", "JsonPath\JsonPa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestJsonDapper", "XUnitTestJsonDapper\XUnitTestJsonDapper.csproj", "{5DBE2340-9389-41E4-9293-65BEF00A9820}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestJsonPath", "XUnitTestJsonPath\XUnitTestJsonPath.csproj", "{82CBF445-3F41-4074-8045-39C001351697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestJsonPath", "XUnitTestJsonPath\XUnitTestJsonPath.csproj", "{82CBF445-3F41-4074-8045-39C001351697}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonEF", "JsonEF\JsonEF.csproj", "{7BB1E098-35D9-4FD7-B0F0-B705C857E588}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonEF_2_2", "JsonEF_2_2\JsonEF_2_2.csproj", "{7BB1E098-35D9-4FD7-B0F0-B705C857E588}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitJsonEF", "XUnitJsonEF\XUnitJsonEF.csproj", "{6E42AA71-72FB-4AC9-A2BE-9682D3771E59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitJsonEF_2_2", "XUnitJsonEF_2_2\XUnitJsonEF_2_2.csproj", "{6E42AA71-72FB-4AC9-A2BE-9682D3771E59}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB_Orm", "DB_Orm\DB_Orm.sqlproj", "{FD49AC67-817B-4E7A-8258-5D3F63FD54F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,12 @@ Global
 		{6E42AA71-72FB-4AC9-A2BE-9682D3771E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E42AA71-72FB-4AC9-A2BE-9682D3771E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E42AA71-72FB-4AC9-A2BE-9682D3771E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD49AC67-817B-4E7A-8258-5D3F63FD54F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD49AC67-817B-4E7A-8258-5D3F63FD54F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD49AC67-817B-4E7A-8258-5D3F63FD54F6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FD49AC67-817B-4E7A-8258-5D3F63FD54F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD49AC67-817B-4E7A-8258-5D3F63FD54F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD49AC67-817B-4E7A-8258-5D3F63FD54F6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

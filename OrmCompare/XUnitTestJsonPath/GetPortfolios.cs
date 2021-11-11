@@ -17,7 +17,7 @@ namespace XUnitTestJsonPath
             var output = (Microsoft.AspNetCore.Mvc.ObjectResult)res;
 
             //assert
-            Assert.True(output.StatusCode==200 && output.Value.ToString().Split("portfolio_code").Length>16000);
+            Assert.True(output.StatusCode==200 && output.Value.ToString().Split("portfoliocode").Length>16000);
         }
     }
 }

@@ -12,9 +12,9 @@ namespace JsonPath.Controllers
         [Route("jsonpath")]
         public IActionResult PortfoliosListPath()
         {
-            string connString = "xxxxx";
+            var connString = "Server = localhost; Database = DB_Orm; Trusted_Connection = True;";
 
-            string qry = "SELECT portfolio_code, portfolio_name, portfolio_type, portfolio_status FROM dbo.tbl_pm01_portfolio FOR JSON PATH";
+            string qry = "SELECT portfoliocode, portfolioname, portfoliotype, portfoliostatus FROM dbo.portfolio FOR JSON PATH";
 
             using (var conn = new SqlConnection(connString))
             {

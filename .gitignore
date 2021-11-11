@@ -3,3 +3,25 @@
 ################################################################################
 
 /.vs
+/OrmCompare/.vs/OrmCompare
+/OrmCompare/DB_Orm/Import Schema Logs/DB_Orm_20211111120415.log
+/OrmCompare/DB_Orm/obj/Debug
+/OrmCompare/JsonDapper/bin/Debug/netcoreapp2.2
+/OrmCompare/JsonDapper/obj
+/OrmCompare/JsonEF/obj
+/OrmCompare/JsonEF_2_2/bin/Debug/netcoreapp2.2
+/OrmCompare/JsonEF_2_2/obj
+/OrmCompare/JsonEF_3_1/bin/Debug/netcoreapp3.1
+/OrmCompare/JsonEF_3_1/obj
+/OrmCompare/JsonPath/bin/Debug/netcoreapp2.2
+/OrmCompare/JsonPath/obj
+/OrmCompare/XUnitJsonEF_2_2/bin/Debug/netcoreapp2.2
+/OrmCompare/XUnitJsonEF_2_2/obj
+/OrmCompare/XUnitTestJsonDapper/bin/Debug/netcoreapp2.2
+/OrmCompare/XUnitTestJsonDapper/obj/Debug/netcoreapp2.2
+/OrmCompare/XUnitTestJsonDapper/obj
+/OrmCompare/XUnitTestJsonPath/bin/Debug/netcoreapp2.2
+/OrmCompare/XUnitTestJsonPath/obj
+/OrmCompare/DB_Orm/bin/Debug
+/OrmCompare/DB_Orm/DB_Orm.dbmdl
+/OrmCompare/DB_Orm/DB_Orm.jfm

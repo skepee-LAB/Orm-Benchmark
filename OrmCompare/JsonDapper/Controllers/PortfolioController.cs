@@ -11,13 +11,11 @@ namespace JsonDapper.Controllers
     [ApiController]
     public class PortfolioController : ControllerBase
     {
-        private readonly string connString = "xxxxx";
-
         [HttpGet]
         [Route("dapper")]
         public IActionResult PortfoliosListDapper()
         {
-            string qry = "SELECT portfolio_code, portfolio_name, portfolio_type, portfolio_status FROM dbo.tbl_pm01_portfolio";
+            string qry = "SELECT portfoliocode, portfolioname, portfoliotype, portfoliostatus FROM portfolio";
 
             var res = GetPortfolios(qry);
             return Ok(res);
@@ -27,6 +25,8 @@ namespace JsonDapper.Controllers
 
         internal IEnumerable<Portfolio> GetPortfolios(string query)
         {
+            var connString = "Server = localhost; Database = DB_Orm; Trusted_Connection = True;";
+
             using (var conn = new SqlConnection(connString))
             {
                var res = conn.Query<Portfolio>(query).AsEnumerable();
