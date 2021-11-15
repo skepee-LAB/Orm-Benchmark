@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace JsonEF_3._1
+namespace JsonEF_3_1
 {
     public class Program
     {

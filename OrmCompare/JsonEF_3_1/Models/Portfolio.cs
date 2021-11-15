@@ -1,14 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JsonEF_3._1.Models
+namespace JsonEF_3_1.Models
 {
     public class portfolio
     {
         [Key]
-        public int Portfolio_Id { get; set; }
-        public string Portfolio_Code { get; set; }
-        public string Portfolio_Name { get; set; }
-        public string Portfolio_Type { get; set; }
-        public string Portfolio_Status { get; set; }
+        public int PortfolioId { get; set; }
+        public string PortfolioCode { get; set; }
+        public string PortfolioName { get; set; }
+        public string PortfolioType { get; set; }
+        public string PortfolioStatus { get; set; }
     }
 }

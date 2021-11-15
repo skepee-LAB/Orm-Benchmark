@@ -8,20 +8,14 @@ namespace JsonEF_2_2.Services
     {
         private MyContext _myContext;
 
-
         public PortfolioRepository(MyContext myContext)
         {
             _myContext = myContext;
         }
 
-
         public IEnumerable<portfolio> GetPortfolios()
         {
             return _myContext.Portfolio.AsEnumerable();
         }
-
-
-
-
     }
 }

@@ -1,42 +1,26 @@
-﻿using System.Data.SqlClient;
-using JsonEF_3._1.Services;
+﻿using JsonEF_3_1.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
-namespace JsonEF_3._1.Controllers
+namespace JsonEF_3_1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class PortfolioController: ControllerBase
     {
-        //private readonly string connString = "xxxxx";
-        private readonly PortfolioRepository repository;
+        private readonly IPortfolioRepository repository;
 
-
-        public PortfolioController(PortfolioRepository _repository)
+        public PortfolioController(IPortfolioRepository _repository)
         {
             repository = _repository;
         }
 
         [HttpGet]
-        [Route("ef")]
+        [Route("ef3_1")]
         public IActionResult GetPortfolios()
         {
             var res = repository.GetPortfolios();
 
             return Ok(res);
-
-
-            //var connection = new SqlConnection(connString);
-            //var options = new DbContextOptionsBuilder<MyContext>().UseSqlServer(connection).Options;
-
-            //using (var context = new MyContext(options))
-            //{
-            //    var portfolioRep = new PortfolioRepository(context);
-            //    var res = portfolioRep.GetPortfolios();
-
-            //    return Ok(res);
-            //}
         }
     }
 }

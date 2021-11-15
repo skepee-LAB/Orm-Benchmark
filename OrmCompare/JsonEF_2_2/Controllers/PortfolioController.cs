@@ -1,7 +1,5 @@
-﻿using System.Data.SqlClient;
-using JsonEF_2_2.Services;
+﻿using JsonEF_2_2.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace JsonEF_2_2.Controllers
 {
@@ -9,19 +7,18 @@ namespace JsonEF_2_2.Controllers
     [ApiController]
     public class PortfolioController: ControllerBase
     {
-        private readonly MyContext context;
+        private readonly IPortfolioRepository repository;
 
-        public PortfolioController(MyContext _context)
+        public PortfolioController(IPortfolioRepository _repository)
         {
-            context = _context ;
+            repository = _repository;
         }
 
         [HttpGet]
-        [Route("ef")]
+        [Route("ef2_2")]
         public IActionResult GetPortfolios()
         {
-            var portfolioRep = new PortfolioRepository(context);
-            var res = portfolioRep.GetPortfolios();
+            var res = repository.GetPortfolios();
 
             return Ok(res);
         }
