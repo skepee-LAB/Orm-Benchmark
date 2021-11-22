@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31829.152
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonDapper", "JsonDapper\JsonDapper.csproj", "{4D432F06-DA94-40D3-AAA7-F847144E03C5}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB_Orm", "DB_Orm\DB_Orm.sqlproj", "{FD49AC67-817B-4E7A-8258-5D3F63FD54F6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonEF_3_1", "JsonEF_3_1\JsonEF_3_1.csproj", "{C333F3EA-495F-4CAF-A3B8-516FF66E7872}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonEF_5_0", "JsonEF_5_0\JsonEF_5_0.csproj", "{161F4987-1BFD-4882-89FD-9B645D002701}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{C333F3EA-495F-4CAF-A3B8-516FF66E7872}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C333F3EA-495F-4CAF-A3B8-516FF66E7872}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C333F3EA-495F-4CAF-A3B8-516FF66E7872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{161F4987-1BFD-4882-89FD-9B645D002701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{161F4987-1BFD-4882-89FD-9B645D002701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{161F4987-1BFD-4882-89FD-9B645D002701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{161F4987-1BFD-4882-89FD-9B645D002701}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
