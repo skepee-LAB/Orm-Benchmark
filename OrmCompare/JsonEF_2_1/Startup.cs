@@ -1,5 +1,4 @@
-﻿using JsonEF_2_2;
-using JsonEF_2_2.Services;
+﻿using JsonEF_2_2.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace JsonEF
+namespace JsonEF_2_2
 {
     public class Startup
     {
@@ -21,7 +20,7 @@ namespace JsonEF
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<MyContext>(options => options.UseSqlServer(Configuration.GetConnectionString("local")));
             services.AddScoped<IPortfolioRepository, PortfolioRepository>();
         }
