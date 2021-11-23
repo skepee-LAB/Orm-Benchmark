@@ -1,5 +1,5 @@
-using JsonDapper.Net_6_0;
-using JsonDapper.Net_6_0.Services;
+using JsonDapper_6_0;
+using JsonDapper_6_0.Services;
 using System.Data;
 using System.Data.SqlClient;
 

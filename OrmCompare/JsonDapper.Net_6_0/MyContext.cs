@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace JsonDapper.Net_6_0
+namespace JsonDapper_6_0
 {
     public class MyContext
     {

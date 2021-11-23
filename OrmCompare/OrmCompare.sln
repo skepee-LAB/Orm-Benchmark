@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonEF_5_0", "JsonEF_5_0\Js
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonEF_6_0", "JsonEF_6_0\JsonEF_6_0.csproj", "{62ADB3D4-891E-4363-A877-AEE621ED112C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonDapper.Net_6_0", "JsonDapper.Net_6_0\JsonDapper.Net_6_0.csproj", "{D47D81CA-183E-4CFE-9470-BF9909F5218A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonDapper_6_0", "JsonDapper.Net_6_0\JsonDapper_6_0.csproj", "{D47D81CA-183E-4CFE-9470-BF9909F5218A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

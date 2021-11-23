@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JsonDapper.Net_6_0.Models
+namespace JsonDapper_6_0.Models
 {
     public class Portfolio
     {

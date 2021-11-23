@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using JsonDapper.Net_6_0.Services;
+using JsonDapper_6_0.Services;
 
-namespace JsonDapper.Net_6_0.Controllers
+namespace JsonDapper_6_0.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
