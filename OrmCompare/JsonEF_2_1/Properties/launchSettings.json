@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "JsonEF_2_2": {
+    "JsonEF_2_1": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

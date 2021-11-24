@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace JsonEF_2_2
+namespace JsonEF_2_1
 {
     public class Program
     {

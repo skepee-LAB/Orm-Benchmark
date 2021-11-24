@@ -1,8 +1,8 @@
-﻿using JsonEF_2_2.Models;
+﻿using JsonEF_2_1.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace JsonEF_2_2.Services
+namespace JsonEF_2_1.Services
 {
     public class PortfolioRepository:IPortfolioRepository
     {

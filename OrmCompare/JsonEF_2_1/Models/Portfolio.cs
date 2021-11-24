@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JsonEF_2_2.Models
+namespace JsonEF_2_1.Models
 {
     public class portfolio
     {

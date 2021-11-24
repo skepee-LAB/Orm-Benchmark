@@ -1,7 +1,7 @@
-﻿using JsonEF_2_2.Models;
+﻿using JsonEF_2_1.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace JsonEF_2_2
+namespace JsonEF_2_1
 {
     public class MyContext: DbContext
     {

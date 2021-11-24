@@ -1,4 +1,4 @@
-﻿using JsonEF_2_2.Services;
+﻿using JsonEF_2_1.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace JsonEF_2_2
+namespace JsonEF_2_1
 {
     public class Startup
     {

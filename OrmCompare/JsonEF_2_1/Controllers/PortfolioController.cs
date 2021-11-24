@@ -1,7 +1,7 @@
-﻿using JsonEF_2_2.Services;
+﻿using JsonEF_2_1.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace JsonEF_2_2.Controllers
+namespace JsonEF_2_1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -15,7 +15,7 @@ namespace JsonEF_2_2.Controllers
         }
 
         [HttpGet]
-        [Route("ef2_2")]
+        [Route("ef2_1")]
         public IActionResult GetPortfolios()
         {
             var res = repository.GetPortfolios();

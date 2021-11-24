@@ -1,10 +1,10 @@
-﻿using JsonEF_2_2.Models;
+﻿using JsonEF_2_1.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace JsonEF_2_2.Services
+namespace JsonEF_2_1.Services
 {
     public interface IPortfolioRepository
     {
