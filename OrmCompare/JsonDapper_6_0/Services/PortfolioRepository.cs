@@ -1,11 +1,7 @@
 ﻿using Dapper;
-using JsonDapper.Models;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Linq;
+using JsonDapper_6_0.Models;
 
-namespace JsonDapper.Services
+namespace JsonDapper_6_0.Services
 {
     public class PortfolioRepository:IPortfolioRepository
     {

@@ -1,7 +1,5 @@
-using JsonDapper_6_0;
-using JsonDapper_6_0.Services;
-using System.Data;
-using System.Data.SqlClient;
+using JsonPath_6_0;
+using JsonPath_6_0.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +11,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<MyContext>();
 builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
-//builder.Services.AddTransient<IDbConnection>((sp) => new SqlConnection(dbConnectionString));
 
 
 var app = builder.Build();

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JsonDapper.Models
+namespace JsonPath_6_0.Models
 {
-    public class Portfolio
+    public class portfolio
     {
         [Key]
         public int PortfolioId { get; set; }
