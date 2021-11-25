@@ -56,8 +56,8 @@ In order to test web api's, the response time will be considered. I created a Be
 2. number of iterations
 3. Y/N if you want a log file, optional
 
-###Performance results
-In order to test the response time I used Benchmark Rewst Get console in this way:
+### Performance results
+In order to test the response time I run [Benchmark Rest Get](https://github.com/skepee/Benchmark-Rest-Api-Get) singularly from console in this way:
 
 ```
 BenchmarkRestGet https://localhost:44347/api/portfolio/ef3_1 5000 Y
