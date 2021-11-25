@@ -8,8 +8,8 @@ interaction with database will use different ways and different technologies:
 2. EntityFrameworkCore 3.1
 3. EntityFrameworkCore 5.0
 4. EntityFrameworkCore 6.0
-5. Dapper with .Net 6.0 [[info](https://github.com/DapperLib/Dapper)]
-6. JsonPath with .Net 6.0 [[info](https://docs.microsoft.com/en-us/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-2017)]
+5. Dapper (.Net 6.0) [[info](https://github.com/DapperLib/Dapper)]
+6. JsonPath (.Net 6.0) [[info](https://docs.microsoft.com/en-us/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-2017)]
 
 ### Database project.
 The database contains one table with five fields:
