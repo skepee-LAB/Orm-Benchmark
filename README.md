@@ -70,14 +70,14 @@ BenchmarkRestGet https://localhost:7113/api/portfolio/jsonpath 5000 Y
 
 These are the results for the *GetPortfolios()* calling on 5000 iterations to get 20,000 rows each time:
 
-   Type    | Min Time | Max Time | Avg Time
----------- | -------- | -------- |--------------
-  EF 2.1   | 148 ms   | 5142 ms  |  407.9812 ms
-  EF 3.1   | 117 ms   | 7126 ms  |  375.5712 ms
-  EF 5.0   | 103 ms   | 1636 ms  |  277.197 ms
-  EF 6.0   | 79 ms    | 983 ms   |  195.111 ms
-  Dapper   | 60 ms    | 7012 ms  |  135.8858 ms
-  JsonPath | 87 ms    | 527 ms   |  183.673 ms
+   Type    | Min Time | Max Time | Avg Time     | Initial memory allocation | Memory allocation after 10 iterations |
+---------- | -------- | -------- |--------------|---------------------------| ------------------------------------- |  
+  EF 2.1   | 148 ms   | 5142 ms  |  407.9812 ms |                           |                                       | 
+  EF 3.1   | 117 ms   | 7126 ms  |  375.5712 ms |                           |                                       | 
+  EF 5.0   | 103 ms   | 1636 ms  |  277.197 ms  |                           |                                       | 
+  EF 6.0   | 79 ms    | 983 ms   |  195.111 ms  |                           |                                       | 
+  Dapper   | 60 ms    | 7012 ms  |  135.8858 ms |                           |                                       | 
+  JsonPath | 87 ms    | 527 ms   |  183.673 ms  |                           |                                       | 
 
 
 ### Conclusions
