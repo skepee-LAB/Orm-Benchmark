@@ -1,27 +1,39 @@
 # Orm-Compare
 
-### Intro
-Which is the best way in terms of effort and performance to expose data in Json format? I will show you a comparison between two most common ORMs: **EntityFrameworkCore** and **Dapper**. Finally, I will show the performance by retrieving Json data directly from SQL Server. In fact, starting from Sql Server 2016 there is native support for JSON. A complete guide can be found [here](https://docs.microsoft.com/en-us/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-2017). 
-I will show you just a simple example of GET in three different ways.
+### Introduction
+Scope of this project is to analyze different .NET approaches to retrieve data from MSSQL database and expose through a Web Api Rest. For semplicity only Get method will be considered but
+interaction with database will use different ways and different technologies:
 
+1. EntityFrameworkCore 2.1
+2. EntityFrameworkCore 3.1
+3. EntityFrameworkCore 5.0
+4. EntityFrameworkCore 6.0
+5. Dapper with .Net 6.0 [[info](https://github.com/DapperLib/Dapper)]
+6. JsonPath with .Net 6.0 [[info](https://docs.microsoft.com/en-us/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-2017)]
 
-### Content
-The solution contains three projects and a unit test for each project. The unit test gets circa 16000 rows from a table with four fields. The performance profiler is used to check the CPU % of the use dmodules. After that, Postman is used as client to measure times.
+### Database project.
+The database contains one table with five fields:
 
-##### Entity Framework
-* JsonEF
-* XUnitJsonEF
+```
+CREATE TABLE [dbo].[portfolio] (`
+    [PortfolioId]     INT            NOT NULL,
+    [PortfolioCode]   NVARCHAR (100) NOT NULL,
+    [PortfolioName]   NVARCHAR (100) NOT NULL,
+    [PortfolioType]   NVARCHAR (100) NOT NULL,
+    [PortfolioStatus] NVARCHAR (100) NOT NULL
+);
+```
 
-##### Dapper
-* JsonDapper
-* XUnitJsonDapper
+The table contains 20,000 rows.
 
-##### Json Path
-* JsonPath
-* XUnitJsonPath
+### Structure of the project
+The solution contains six projects for each technology plus a database project. All Web Api projects have the same structure:
+1. Controller contains the controller
+2. Models contains class that maps the database table
+3. Services contains the repository patter
+4. MyContext is the database context 
 
-### Project description
-##### Steps for Entity Framework Core project.
+##### Steps for Entity Framework Core projects.
 1. Add *Microsoft.EntityFrameworkCore* by *NuGet* package to your project.
 2. Update ConfigureServices in *Startup* class.
 3. Create your model, *Portfolio* class, **ensuring you will add a primary key**.
@@ -38,46 +50,34 @@ The solution contains three projects and a unit test for each project. The unit 
 1. Create your resourse in *PortfolioController*. It is only needed to pass the query you need. That's all.
 
 
+### How to test
+In order to test web api's, the response time will be considered. I created a Benchmark Rest Get project that I used for this purpose and can be found [here](https://github.com/skepee/Benchmark-Rest-Api-Get). It is a console app that you can invoke in the command line by passing these parameters:
+1. Web Api url
+2. number of iterations
+3. Y/N if you want a log file, optional
 
+###Performance results
+In order to test the response time I used Benchmark Rewst Get console in this way:
 
-### Performance results
-Here the performance results are listed:
+```
+BenchmarkRestGet https://localhost:44347/api/portfolio/ef3_1 5000 Y
+BenchmarkRestGet https://localhost:44323/api/portfolio/ef5_0 5000 Y
+BenchmarkRestGet https://localhost:44397/api/portfolio/ef2_1 5000 Y
+BenchmarkRestGet https://localhost:7266/api/portfolio/dapper 5000 Y
+BenchmarkRestGet https://localhost:7230/api/portfolio/ef6_0 5000 Y
+BenchmarkRestGet https://localhost:7113/api/portfolio/jsonpath 5000 Y
+```
 
-### CPU comparison with performance profiler
-##### Entity Framework
-![Entity Framework](https://github.com/skepee/Orm-Compare/blob/master/screenshots/EF.png)
+These are the results for the *GetPortfolios()* calling on 5000 iterations to get 20,000 rows each time:
 
-##### Dapper
-![Dapper](https://github.com/skepee/Orm-Compare/blob/master/screenshots/Dapper.png)
-
-##### Json Path
-![JsonPath](https://github.com/skepee/Orm-Compare/blob/master/screenshots/JsonPath.png)
-
-
-
-### Timing comparison with Postman
-##### Entity Framework in Postman
-![Entity Framework in Postman](https://github.com/skepee/Orm-Compare/blob/master/screenshots/PostmanEFC.png)
-
-
-##### Dapper in Postman
-![Dapper in Postman](https://github.com/skepee/Orm-Compare/blob/master/screenshots/PostmanDapper.png)
-
-
-##### Json Path in Postman
-![JsonPath in Postman](https://github.com/skepee/Orm-Compare/blob/master/screenshots/PostmanJsonPath.png)
-
-
-By using Sql Server Json support, the  API call is very fast because you do not need any class mapping and no extra code to add.
-
-These are the results for the *GetPortfolios()* calling:
-
-  Type  | Entity Framework Core | Dapper | Sql Server Json Support
-------- | --------------------- | ------ |--------------------------
-  CPU % |         23.15%        | 8.99%  |       5.31%
-  Time  |         3.84s         | 3.58s  |       3.41s
-
-
+   Type    | Min Time | Max Time | Avg Time
+---------- | -------- | -------- |--------------
+  EF 2.1   | 148 ms   | 5142 ms  |  407.9812 ms
+  EF 3.1   | 117 ms   | 7126 ms  |  375.5712 ms
+  EF 5.0   | 103 ms   | 1636 ms  |  277.197 ms
+  EF 6.0   | 79 ms    | 983 ms   |  195.111 ms
+  Dapper   | 60 ms    | 7012 ms  |  135.8858 ms
+  JsonPath | 87 ms    | 527 ms   |  183.673 ms
 
 
 ### Conclusions
@@ -86,4 +86,8 @@ In this very simple example a ORM perfomance comparison has been shown. By using
 2. No extra code to add (repository, context).
 3. No mapping class needed (then no CPU time spent).
 4. More efficient in terms of time and CPU usage.
+
+
+### Final notes
+Attached to the solution also the benchmark results I used for this test.
 
