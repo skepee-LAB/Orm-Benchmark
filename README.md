@@ -135,6 +135,13 @@ These are the results for the *GetPortfolios()* calling on 5000 iterations to ge
         <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonPath_6_0/Benchmark/BenchmarkGetRest_JsonPath.Net6.0.txt">Benchmark Json Path</a></td>
     </tr> 
 </table>
+<br/>
+<p>Graph result for Average respone time:</p>
+<img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/graphresult.jpg">
+
+
+
+
 
 <!--
    Type    | Min Time | Max Time | Avg Time     | Initial memory allocation | Memory allocation after 10 iterations |
