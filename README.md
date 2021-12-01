@@ -56,8 +56,13 @@ In order to test web api's, the response time will be considered. I created a Be
 2. number of iterations
 3. Y/N if you want a log file, optional
 
-### Performance results
-In order to test the response time I run [Benchmark Rest Get](https://github.com/skepee/Benchmark-Rest-Api-Get) singularly from console in this way:
+### Benchmark results
+
+The benchmark results are here proposed in two ways. One is by using a tool I created for http Get requests [Benchmark Rest Get](https://github.com/skepee/Benchmark-Rest-Api-Get) and another one is by using [Crank](https://github.com/dotnet/crank). Let's see.
+
+
+#### Benchmark by using BenchmarkRestGet
+[Benchmark Rest Get](https://github.com/skepee/Benchmark-Rest-Api-Get) tool can be used through console. I launched the API and then run it locally setting on 5000 iterations in this way:
 
 ```
 BenchmarkRestGet https://localhost:44347/api/portfolio/ef3_1 5000 Y
@@ -139,30 +144,38 @@ These are the results for the *GetPortfolios()* calling on 5000 iterations to ge
 <p>Graph result for Average respone time:</p>
 <img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/graphresult.jpg">
 
+#### Benchmark with [Crank](https://github.com/dotnet/crank)
+By using Crank ([here](https://www.youtube.com/watch?v=2IgfrnG-128) you can find a guide) you do not need to launch the project but just setting it in a .yml file and you can run it locally. These the results:
+
+| application           |    EF 6.0     |    EF 5.0      |    EF 3.1      |     Dapper    |    JsonPath   |
+| --------------------- | ------------- | -------------- |--------------  | ------------- | ------------- |
+| CPU Usage (%)         | 14            | 15             | 15             | 18            | 23            |
+| Cores usage (%)       | 112           | 117            | 119            | 145           | 183           |
+| Working Set (MB)      | 155           | 115            | 112            | 108           | 146           |
+| Private Memory (MB)   | 172           | 129            | 132            | 126           | 163           |
+| Build Time (ms)       | 3,341         | 3,677          | 3,501          | 3,237         | 2,225         |
+| Start Time (ms)       | 666           | 666            | 17,145         | 16,327        | 703           |
+| Published Size (KB)   | 104,948       | 99,572         | 92,669         | 96,567        | 96,369        |
+| .NET Core SDK Version | 6.0.100       | 5.0.403        | 3.1.415        | 6.0.100       | 6.0.100       |
+| ASP.NET Core Version  | 6.0.0+ae1a6cb | 5.0.12+0bc3c37 | 3.1.21+458d974 | 6.0.0+ae1a6cb | 6.0.0+ae1a6cb |
+| .NET Runtime Version  | 6.0.0+4822e3c | 5.0.12+7211aa0 | 3.1.21+df8abc0 | 6.0.0+4822e3c | 6.0.0+4822e3c |
+
+
+| load                | EF 6.0  | EF 5.0  |  EF 3.1 | Dapper  | JsonPath|
+| ------------------- | ------- |-------  | ------- | ------- | ------- |
+| CPU Usage (%)       | 7       | 8       | 6       | 7       | 6       |
+| Cores usage (%)     | 55      | 65      | 48      | 60      | 46      |
+| Working Set (MB)    | 29      | 29      | 29      | 29      | 29      |
+| Private Memory (MB) | 39      | 40      | 40      | 40      | 40      |
+| Start Time (ms)     | 130     | 123     | 72      | 70      | 78      |
+| First Request (ms)  | 101     | 107     | 102     | 101     | 112     |
+| Requests            | 99,537  | 97,077  | 104,187 | 101,427 | 97,117  |
+| Bad responses       | 99,537  | 97,077  | 104,187 | 101,427 | 97,117  |
+| Mean latency (us)   | 38,663  | 39,671  | 36,947  | 37,980  | 39,639  |
+| Max latency (us)    | 746,205 | 759,678 | 693,422 | 748,605 | 624,703 |
+| Requests/sec        | 6,607   | 6,454   | 6,926   | 6,728   | 6,452   |
+| Requests/sec (max)  | 44,419  | 40,508  | 41,411  | 43,592  | 43,768  |
 
 
 
 
-<!--
-   Type    | Min Time | Max Time | Avg Time     | Initial memory allocation | Memory allocation after 10 iterations |
----------- | -------- | -------- |--------------|---------------------------| ------------------------------------- |  
-  EF 2.1   | 148 ms   | 5142 ms  |  407.9812 ms | |
-                          |                                       | 
-  EF 3.1   | 117 ms   | 7126 ms  |  375.5712 ms |                           |                                       | 
-  EF 5.0   | 103 ms   | 1636 ms  |  277.197 ms  |                           |                                       | 
-  EF 6.0   | 79 ms    | 983 ms   |  195.111 ms  |                           |                                       | 
-  Dapper   | 60 ms    | 7012 ms  |  135.8858 ms |                           |                                       | 
-  JsonPath | 87 ms    | 527 ms   |  183.673 ms  |                           |                                       | 
-
-
-### Conclusions
-In this very simple example a ORM perfomance comparison has been shown. By using Sql Server Json native support we can have many benefits:
-1. No NuGet package to install.
-2. No extra code to add (repository, context).
-3. No mapping class needed (then no CPU time spent).
-4. More efficient in terms of time and CPU usage.
-
-
-### Final notes
-Attached to the solution also the benchmark results I used for this test.
--->
