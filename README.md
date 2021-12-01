@@ -185,23 +185,23 @@ By using Crank ([here](https://www.youtube.com/watch?v=2IgfrnG-128) you can find
     </tr>
     <tr>
         <td>EF 3.1</td>
-        <td><img src="https://github.com/skepee/Orm-Compare/blob/master/Crank Trace results/OrmCompareTraceEF3.1.jpg" heigth="400px" width="800px"></td>
+        <td><img src="https://github.com/skepee/Orm-Compare/blob/master/Crank Trace results/OrmCompareTraceEF3.1.jpg"></td>
     </tr> 
     <tr>
         <td>EF 5.0</td>
-        <td><img src="https://github.com/skepee/Orm-Compare/blob/master/Crank Trace results/OrmCompareTraceEF5.0.jpg" heigth="400px" width="800px"></td>
+        <td><img src="https://github.com/skepee/Orm-Compare/blob/master/Crank Trace results/OrmCompareTraceEF5.0.jpg"></td>
     </tr> 
     <tr>
         <td>EF 6.0</td>
-        <td><img src="https://github.com/skepee/Orm-Compare/blob/master/Crank Trace results/OrmCompareTraceEF6.0.jpg" heigth="400px" width="800px"></td>
+        <td><img src="https://github.com/skepee/Orm-Compare/blob/master/Crank Trace results/OrmCompareTraceEF6.0.jpg"></td>
     </tr> 
     <tr>
         <td>Dapper (.NET 6.0)</td>
-        <td><img src="https://github.com/skepee/Orm-Compare/blob/master/Crank Trace results/OrmCompareTraceDapper.jpg" heigth="400px" width="800px"></td>
+        <td><img src="https://github.com/skepee/Orm-Compare/blob/master/Crank Trace results/OrmCompareTraceDapper.jpg"></td>
     </tr> 
     <tr>
         <td>JsonPath (.NET 6.0)</td>
-        <td><img src="https://github.com/skepee/Orm-Compare/blob/master/Crank Trace results/OrmCompareTraceJsonPath.jpg" heigth="400px" width="800px"></td>
+        <td><img src="https://github.com/skepee/Orm-Compare/blob/master/Crank Trace results/OrmCompareTraceJsonPath.jpg"></td>
     </tr> 
 </table>
 
