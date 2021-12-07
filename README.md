@@ -139,7 +139,7 @@ These are the results for the *GetPortfolios()* calling on 5000 iterations to ge
 </table>
 <br/>
 <p>Graph result for Average respone time:</p>
-<img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/graphresult.jpg">
+<img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/graphresult2.jpg">
 
 ## Benchmark with [Crank](https://github.com/dotnet/crank)
 By using Crank ([here](https://www.youtube.com/watch?v=2IgfrnG-128) you can find a guide) you do not need to launch the project but just setting it in a .yml file and you can run it locally. These the results:
