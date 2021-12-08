@@ -1,4 +1,4 @@
-# Orm-Compare and benchmark
+# Object relation model benchmarks
 
 ## Introduction
 Scope of this project is to analyze different .NET approaches to retrieve data from MSSQL database and expose through a Web Api Rest. For semplicity only Get method will be considered but
