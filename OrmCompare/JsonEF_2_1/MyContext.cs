@@ -8,6 +8,8 @@ namespace JsonEF_2_1
         public DbSet<portfolio> Portfolio { get; set; }
 
 
+
+
         public MyContext(DbContextOptions<MyContext> options): base(options)
         {}
 
