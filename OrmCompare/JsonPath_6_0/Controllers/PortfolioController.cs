@@ -1,4 +1,5 @@
-﻿using JsonPath_6_0.Services;
+﻿using JsonPath_6_0.Models;
+using JsonPath_6_0.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JsonPath_6_0.Controllers
@@ -22,5 +23,30 @@ namespace JsonPath_6_0.Controllers
 
             return Ok(res);
         }
+
+        [HttpPost]
+        [Route("jsonpath")]
+        public IActionResult AddPortfolio([FromBody] portfolio item)
+        {
+            repository.InsertPortfolio(item);
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("jsonpath")]
+        public IActionResult UpdatePortfolio([FromBody] portfolio item)
+        {
+            repository.UpdatePortfolio(item);
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("jsonpath")]
+        public IActionResult RemovePortfolio([FromBody] int portfolioId)
+        {
+            repository.DeletePortfolio(portfolioId);
+            return Ok();
+        }
+
     }
 }
