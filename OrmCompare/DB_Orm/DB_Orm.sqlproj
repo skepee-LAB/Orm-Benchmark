@@ -68,5 +68,8 @@
     <Build Include="dbo\Stored Procedures\PortfolioList.sql" />
     <Build Include="dbo\Stored Procedures\PortfolioIns.sql" />
     <Build Include="dbo\Stored Procedures\PortfolioDel.sql" />
+    <Build Include="dbo\Stored Procedures\JsonUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\JsonList.sql" />
+    <Build Include="dbo\Stored Procedures\JsonInsert.sql" />
   </ItemGroup>
 </Project>
