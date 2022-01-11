@@ -51,26 +51,16 @@ The solution contains six projects for each technology plus a database project. 
 
 
 ## How to test
-The benchmark results are here proposed in two ways. One is by using a tool I created for Http Get requests [Benchmark Rest Get](https://github.com/skepee/Benchmark-Rest-Api-Get) and another one is by using [Crank](https://github.com/dotnet/crank). Let's see.
+The benchmark results are here proposed in two ways. One is by using a tool I created for Http Get requests [Benchmark Rest](https://github.com/skepee/Benchmark-Rest-Api-Get) and another one is by using [Crank](https://github.com/dotnet/crank). Let's see.
 
-## Benchmark by using BenchmarkRestGet
-Benchmark Rest Get can be used in a console by using these parameters:
+## Benchmark by using BenchmarkRest
+Benchmark Rest has been used in a console by using these parameters:
 1. Web Api url
 2. number of iterations
-3. Y/N if you want a log file, optional
+4. method
 
-I launched the Web API to test and then I run the benchmark command locally by setting iterations to 5000 in this way:
-
-```
-BenchmarkRestGet https://localhost:44347/api/portfolio/ef3_1 5000 Y
-BenchmarkRestGet https://localhost:44323/api/portfolio/ef5_0 5000 Y
-BenchmarkRestGet https://localhost:44397/api/portfolio/ef2_1 5000 Y
-BenchmarkRestGet https://localhost:7266/api/portfolio/dapper 5000 Y
-BenchmarkRestGet https://localhost:7230/api/portfolio/ef6_0 5000 Y
-BenchmarkRestGet https://localhost:7113/api/portfolio/jsonpath 5000 Y
-```
-
-These are the results for the *GetPortfolios()* calling on 5000 iterations to get 20,000 rows each time:
+The cumulative values have been calulated on a total of 5000 iterations for each method of the resource.
+The table contains 20,0000 rows.
 
 <table>
     <tr>
@@ -81,7 +71,7 @@ These are the results for the *GetPortfolios()* calling on 5000 iterations to ge
         <th>Del (ms)</th>
         <th>Initial memory allocation</th>
         <th>Memory allocation (after 10 times)</th>
-        <th><a href="https://github.com/skepee/Benchmark-Rest-Api-Get">Benchmark</a></th>
+        <th><a href="https://github.com/skepee/Benchmark-Rest-Api">Benchmark</a></th>
     </tr>
     <tr>
         <td>EF 2.1</td>
@@ -145,8 +135,8 @@ These are the results for the *GetPortfolios()* calling on 5000 iterations to ge
     </tr> 
 </table>
 <br/>
-<p>Graph result for Average respone time:</p>
-<img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/graphresult2.jpg">
+<p>Graph result of average respone time for Get, Post, Put, Delete</p>
+<img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/OrmResult.jpg">
 
 ## Benchmark with [Crank](https://github.com/dotnet/crank)
 By using Crank ([here](https://www.youtube.com/watch?v=2IgfrnG-128) you can find a guide) you do not need to launch the project but just setting it in a .yml file and you can run it locally. These the results:
