@@ -1,0 +1,9 @@
+D:\Projects\skepee\Orm-Compare\OrmCompare\DB_Orm\bin\Release\DB_Orm.dacpac
+D:\Projects\skepee\Orm-Compare\OrmCompare\DB_Orm\bin\Release\DB_Orm.dll
+D:\Projects\skepee\Orm-Compare\OrmCompare\DB_Orm\bin\Release\DB_Orm.pdb
+D:\Projects\skepee\Orm-Compare\OrmCompare\DB_Orm\obj\Release\Model.xml
+D:\Projects\skepee\Orm-Compare\OrmCompare\DB_Orm\obj\Release\refactor.xml
+D:\Projects\skepee\Orm-Compare\OrmCompare\DB_Orm\obj\Release\postdeploy.sql
+D:\Projects\skepee\Orm-Compare\OrmCompare\DB_Orm\obj\Release\predeploy.sql
+D:\Projects\skepee\Orm-Compare\OrmCompare\DB_Orm\obj\Release\DB_Orm.dll
+D:\Projects\skepee\Orm-Compare\OrmCompare\DB_Orm\obj\Release\DB_Orm.pdb

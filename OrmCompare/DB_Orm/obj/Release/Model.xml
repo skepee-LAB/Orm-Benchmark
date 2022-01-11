@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="DB_Orm.dll" />
+			<Metadata Name="FileName" Value="D:\PROJECTS\SKEPEE\ORM-COMPARE\ORMCOMPARE\DB_ORM\OBJ\RELEASE\DB_ORM.DLL" />
+			<Metadata Name="AssemblyName" Value="DB_Orm" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="D:\Projects\skepee\Orm-Compare\OrmCompare\DB_Orm\obj\Release\DB_Orm.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="Latin1_General_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[portfolio].[PortfolioId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[portfolio]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[JsonInsert]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+
+INSERT INTO [dbo].[portfolio] (portfolioCode, portfolioName, portfolioType, portfolioStatus)
+SELECT portfolioCode, portfolioName, portfolioType, portfolioStatus
+FROM OPENJSON(@jsonItem)
+     WITH (
+	 PortfolioId int,
+	 PortfolioCode nvarchar(100) '$.PortfolioCode', 
+	 PortfolioName nvarchar(100) '$.PortfolioName', 
+	 PortfolioType nvarchar(100) '$.PortfolioType', 
+	 PortfolioStatus nvarchar(100) '$.PortfolioStatus')
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[portfolio]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioStatus]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[JsonInsert].[@jsonItem]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="512" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[JsonInsert](&#xD;&#xA;&#x9;@jsonItem nvarchar(max))&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[JsonList]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+
+SELECT portfolioId, portfolioCode, portfolioName, portfolioType, portfolioStatus 
+FROM portfolio 
+FOR JSON PATH
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[portfolio]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioStatus]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="168" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[JsonList]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[JsonUpdate]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+
+UPDATE portfolio
+ SET 
+ PortfolioCode = json.PortfolioCode,
+ PortfolioName = json.PortfolioName,
+ PortfolioType = json.PortfolioType,
+ PortfolioStatus = json.PortfolioStatus
+ FROM OPENJSON(@jsonItem)
+ WITH (
+ 	 PortfolioId int,
+	 PortfolioCode nvarchar(100), 
+	 PortfolioName nvarchar(100), 
+	 PortfolioType nvarchar(100), 
+	 PortfolioStatus nvarchar(100))
+ AS json
+ WHERE Portfolio.PortfolioId = json.PortfolioId 
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[portfolio]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioCode]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioName]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioType]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioStatus]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioId]" />
+				</Entry>
+				<Entry />
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[JsonUpdate].[@jsonItem]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="500" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE JsonUpdate(@jsonItem nvarchar(max))&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[portfolio]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[portfolio].[PortfolioId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[portfolio].[PortfolioCode]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[portfolio].[PortfolioName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[portfolio].[PortfolioType]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[portfolio].[PortfolioStatus]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="3" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[PortfolioDel]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+
+delete 
+	from portfolio
+where 	
+	portfolioId = @portfolioId
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[portfolio]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PortfolioDel].[@portfolioId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PortfolioDel].[@portfolioId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="2" />
+				<Property Name="Length" Value="142" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;create PROCEDURE [dbo].[PortfolioDel]&#xD;&#xA;&#x9;@portfolioId int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[PortfolioIns]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+
+insert into portfolio(
+	portfolioCode, 
+	portfolioName, 
+	portfolioType, 
+	portfolioStatus
+)
+values(
+	@portfolioCode, 
+	@portfolioName, 
+	@portfolioType, 
+	@portfolioStatus
+)
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[portfolio]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PortfolioIns].[@portfolioCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PortfolioIns].[@portfolioName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PortfolioIns].[@portfolioType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PortfolioIns].[@portfolioStatus]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PortfolioIns].[@portfolioCode]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PortfolioIns].[@portfolioName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PortfolioIns].[@portfolioType]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PortfolioIns].[@portfolioStatus]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="369" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[PortfolioIns]&#xD;&#xA;&#x9;@portfolioCode varchar(100),&#xD;&#xA;&#x9;@portfolioName varchar(100),&#xD;&#xA;&#x9;@portfolioType varchar(100),&#xD;&#xA;&#x9;@portfolioStatus varchar(100)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[PortfolioList]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+
+    SELECT portfolioId, portfolioCode, portfolioName, portfolioType, portfolioStatus 
+	FROM portfolio
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[portfolio]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioStatus]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="154" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE PortfolioList&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[PortfolioUpd]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+
+update portfolio
+set	
+	portfolioCode=@portfolioCode, 
+	portfolioName=@portfolioName, 
+	portfolioType=@portfolioType, 
+	portfolioStatus=@portfolioStatus
+where 	
+	portfolioId = @portfolioId
+
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[portfolio]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PortfolioUpd].[@portfolioCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PortfolioUpd].[@portfolioName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PortfolioUpd].[@portfolioType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PortfolioUpd].[@portfolioStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[portfolio].[PortfolioId]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[PortfolioUpd].[@portfolioId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PortfolioUpd].[@portfolioId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PortfolioUpd].[@portfolioCode]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PortfolioUpd].[@portfolioName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PortfolioUpd].[@portfolioType]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[PortfolioUpd].[@portfolioStatus]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="398" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create PROCEDURE [dbo].[PortfolioUpd]&#xD;&#xA;&#x9;@portfolioId int,&#xD;&#xA;&#x9;@portfolioCode varchar(100),&#xD;&#xA;&#x9;@portfolioName varchar(100),&#xD;&#xA;&#x9;@portfolioType varchar(100),&#xD;&#xA;&#x9;@portfolioStatus varchar(100)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+	</Model>
+</DataSchemaModel>
