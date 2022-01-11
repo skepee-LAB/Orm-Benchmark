@@ -115,7 +115,7 @@ The table contains 20,0000 rows.
     </tr> 
     <tr>
         <td>Dapper (.NET 6.0)</td>
-        <td>69.4608</td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonDapper_6_0/Benchmark/Dapper-Get.txt">69.4608</a></td>
         <td>44.9948</td>
         <td>47.8338</td>
         <td>44.8926</td>
