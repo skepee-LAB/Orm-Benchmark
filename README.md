@@ -75,63 +75,70 @@ These are the results for the *GetPortfolios()* calling on 5000 iterations to ge
 <table>
     <tr>
         <th>Type</th>
-        <th>Min Time</th>
-        <th>Max Time</th>
-        <th>Avg Time</th>
+        <th>Get (ms)</th>
+        <th>Post (ms)</th>
+        <th>Put (ms)</th>
+        <th>Del (ms)</th>
         <th>Initial memory allocation</th>
         <th>Memory allocation (after 10 times)</th>
         <th><a href="https://github.com/skepee/Benchmark-Rest-Api-Get">Benchmark</a></th>
     </tr>
     <tr>
         <td>EF 2.1</td>
-        <td>148 ms</td>
-        <td>5142 ms</td>
-        <td>407.9812 ms</td>
+        <td>141.4472</td>
+        <td>58.2974</td>
+        <td>48.0514</td>
+        <td>59.176</td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_2_1/Benchmark/EF2.1InitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_2_1/Benchmark/EF2.1MemAll10Iterations.jpg" heigth="100px" width="200px"></td>
         <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_2_1/Benchmark/BenchmarkGetRest_ef2_1.txt">Benchmark EF 2.1</a></td>
     </tr> 
     <tr>
         <td>EF 3.1</td>
-        <td>117 ms</td>
-        <td>7126 ms</td>
-        <td>375.5712 ms</td>
+        <td>119.5438</td>
+        <td>32.4326</td>
+        <td>32.1808</td>
+        <td>32.07</td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_3_1/Benchmark/EF3.1InitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_3_1/Benchmark/EF3.1MemAll10Iterations.jpg" heigth="100px" width="200px"></td>
         <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_3_1/Benchmark/BenchmarkGetRest_ef3_1.txt">Benchmark EF 3.1</a></td>
     </tr> 
     <tr>
         <td>EF 5.0</td>
-        <td>103 ms</td>
-        <td>1636 ms</td>
-        <td>277.197 ms</td>
+        <td>98.0778</td>
+        <td>33.1072</td>
+        <td>33.294</td>
+        <td>33.1512</td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_5_0/Benchmark/EF5.0InitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_5_0/Benchmark/EF5.0MemAll10Iterations.jpg" heigth="100px" width="200px"></td>
         <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_5_0/Benchmark/BenchmarkGetRest_ef5_0.txt">Benchmark EF 5.0</a></td>
     </tr> 
     <tr>
         <td>EF 6.0</td>
-        <td>79 ms</td>
-        <td>983 ms</td>
-        <td>195.111 ms</td>
+        <td>90.983</td>
+        <td>38.6668</td>
+        <td>38.176</td>
+        <td>40.5092</td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_6_0/Benchmark/EF6.0InitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_6_0/Benchmark/EF6.0MemAll10Iterations.jpg" heigth="100px" width="200px"></td>
         <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_6_0/Benchmark/BenchmarkGetRest_ef6_0.txt">Benchmark EF 6.0</a></td>
     </tr> 
     <tr>
         <td>Dapper (.NET 6.0)</td>
-        <td>60 ms</td>
-        <td>7012 ms</td>
-        <td>135.8858 ms</td>
+        <td>69.4608</td>
+        <td>44.9948</td>
+        <td>47.8338</td>
+        <td>44.8926</td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonDapper_6_0/Benchmark/DapperInitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonDapper_6_0/Benchmark/DapperMemAll10Iterations.jpg" heigth="100px" width="200px"></td>
         <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonDapper_6_0/Benchmark/BenchmarkGetRest_Dapper.Net6.0.txt">Benchmark EF 2.1</a></td>
     </tr> 
     <tr>
         <td>JsonPath (.NET 6.0)</td>
-        <td>87 ms</td>
-        <td>527 ms</td>
-        <td>183.673 ms</td>
+        <td>101.9568</td>
+        <td>44.468</td>
+        <td>44.2616</td>
+        <td>44.1766</td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonPath_6_0/Benchmark/JsonPathInitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonPath_6_0/Benchmark/JsonPathMemAll10Iterations.jpg" heigth="100px" width="200px"></td>
         <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonPath_6_0/Benchmark/BenchmarkGetRest_JsonPath.Net6.0.txt">Benchmark Json Path</a></td>
