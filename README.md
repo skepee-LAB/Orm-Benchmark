@@ -71,67 +71,60 @@ The table contains 20,0000 rows.
         <th>Del (ms)</th>
         <th>Initial memory allocation</th>
         <th>Memory allocation (after 10 times)</th>
-        <th><a href="https://github.com/skepee/Benchmark-Rest-Api">Benchmark</a></th>
     </tr>
     <tr>
         <td>EF 2.1</td>
-        <td>141.4472</td>
-        <td>58.2974</td>
-        <td>48.0514</td>
-        <td>59.176</td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_2_1/Benchmark/EF2.1-Get.log">141.4472</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_2_1/Benchmark/EF2.1-Get.log">58.2974</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_2_1/Benchmark/EF2.1-Get.log">48.0514</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_2_1/Benchmark/EF2.1-Get.log">59.176</a></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_2_1/Benchmark/EF2.1InitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_2_1/Benchmark/EF2.1MemAll10Iterations.jpg" heigth="100px" width="200px"></td>
-        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_2_1/Benchmark/BenchmarkGetRest_ef2_1.txt">Benchmark EF 2.1</a></td>
     </tr> 
     <tr>
         <td>EF 3.1</td>
-        <td>119.5438</td>
-        <td>32.4326</td>
-        <td>32.1808</td>
-        <td>32.07</td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_3_1/Benchmark/EF3.1-Get.log">119.5438</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_3_1/Benchmark/EF3.1-Get.log">32.4326</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_3_1/Benchmark/EF3.1-Get.log">32.1808</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_3_1/Benchmark/EF3.1-Get.log">32.07</a></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_3_1/Benchmark/EF3.1InitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_3_1/Benchmark/EF3.1MemAll10Iterations.jpg" heigth="100px" width="200px"></td>
-        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_3_1/Benchmark/BenchmarkGetRest_ef3_1.txt">Benchmark EF 3.1</a></td>
     </tr> 
     <tr>
         <td>EF 5.0</td>
-        <td>98.0778</td>
-        <td>33.1072</td>
-        <td>33.294</td>
-        <td>33.1512</td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_5_0/Benchmark/EF5.0-Get.log">98.0778</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_5_0/Benchmark/EF5.0-Get.log">33.1072</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_5_0/Benchmark/EF5.0-Get.log">33.294</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_5_0/Benchmark/EF5.0-Get.log">33.1512</a></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_5_0/Benchmark/EF5.0InitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_5_0/Benchmark/EF5.0MemAll10Iterations.jpg" heigth="100px" width="200px"></td>
-        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_5_0/Benchmark/BenchmarkGetRest_ef5_0.txt">Benchmark EF 5.0</a></td>
     </tr> 
     <tr>
         <td>EF 6.0</td>
-        <td>90.983</td>
-        <td>38.6668</td>
-        <td>38.176</td>
-        <td>40.5092</td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_6_0/Benchmark/EF6.0-Get.log">90.983</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_6_0/Benchmark/EF6.0-Post.log">38.6668</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_6_0/Benchmark/EF6.0-Put.log">38.176</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_6_0/Benchmark/EF6.0-Delete.log">40.5092</a></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_6_0/Benchmark/EF6.0InitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_6_0/Benchmark/EF6.0MemAll10Iterations.jpg" heigth="100px" width="200px"></td>
-        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonEF_6_0/Benchmark/BenchmarkGetRest_ef6_0.txt">Benchmark EF 6.0</a></td>
     </tr> 
     <tr>
         <td>Dapper (.NET 6.0)</td>
         <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonDapper_6_0/Benchmark/Dapper-Get.log">69.4608</a></td>
-        <td>44.9948</td>
-        <td>47.8338</td>
-        <td>44.8926</td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonDapper_6_0/Benchmark/Dapper-Post.log">44.9948</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonDapper_6_0/Benchmark/Dapper-Put.log">47.8338</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonDapper_6_0/Benchmark/Dapper-Delete.log">44.8926</a></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonDapper_6_0/Benchmark/DapperInitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonDapper_6_0/Benchmark/DapperMemAll10Iterations.jpg" heigth="100px" width="200px"></td>
-        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonDapper_6_0/Benchmark/BenchmarkGetRest_Dapper.Net6.0.txt">Benchmark EF 2.1</a></td>
     </tr> 
     <tr>
         <td>JsonPath (.NET 6.0)</td>
-        <td>101.9568</td>
-        <td>44.468</td>
-        <td>44.2616</td>
-        <td>44.1766</td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonPath_6_0/Benchmark/JsonPath-Get.log">101.9568</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonPath_6_0/Benchmark/JsonPath-Post.log">44.468</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonPath_6_0/Benchmark/JsonPath-Put.log">44.2616</a></td>
+        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonPath_6_0/Benchmark/JsonPath-Delete.log">44.1766</a></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonPath_6_0/Benchmark/JsonPathInitialMemAll.jpg" heigth="100px" width="200px"></td>
         <td><img src="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonPath_6_0/Benchmark/JsonPathMemAll10Iterations.jpg" heigth="100px" width="200px"></td>
-        <td><a href="https://github.com/skepee/Orm-Compare/blob/master/OrmCompare/JsonPath_6_0/Benchmark/BenchmarkGetRest_JsonPath.Net6.0.txt">Benchmark Json Path</a></td>
     </tr> 
 </table>
 <br/>
