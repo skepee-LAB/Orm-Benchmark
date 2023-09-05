@@ -6,16 +6,16 @@ namespace JsonDapper_6_0.Services
 {
     public class PortfolioRepository:IPortfolioRepository
     {
-        private readonly MyContext myContext;
+        private readonly MyContext _myContext;
          
-        public PortfolioRepository(MyContext _myContext)
+        public PortfolioRepository(MyContext myContext)
         {
-            myContext = _myContext;
+            _myContext = myContext;
         }
 
         public void DeletePortfolio(int portfolioId)
         {
-            using (var conn = myContext.CreateConnection())
+            using (var conn = _myContext.CreateConnection())
             {
                 conn.Query<Portfolio>("PortfolioDel", new { portfolioId=portfolioId }, commandType: CommandType.StoredProcedure).FirstOrDefault();
             }
@@ -23,7 +23,7 @@ namespace JsonDapper_6_0.Services
 
         public IEnumerable<Portfolio> GetPortfolios()
         {
-            using (var conn = myContext.CreateConnection())
+            using (var conn = _myContext.CreateConnection())
             {
                 var res = conn.Query<Portfolio>("PortfolioList", commandType: CommandType.StoredProcedure).AsEnumerable();
                 return res;
@@ -32,7 +32,7 @@ namespace JsonDapper_6_0.Services
 
         public void InsertPortfolio(Portfolio item)
         {
-            using (var conn = myContext.CreateConnection())
+            using (var conn = _myContext.CreateConnection())
             {
                 var values = new
                 {
@@ -48,7 +48,7 @@ namespace JsonDapper_6_0.Services
 
         public void UpdatePortfolio(Portfolio item)
         {
-            using (var conn = myContext.CreateConnection())
+            using (var conn = _myContext.CreateConnection())
             {
                 var values = new
                 {

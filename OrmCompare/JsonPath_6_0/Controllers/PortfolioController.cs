@@ -4,47 +4,43 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JsonPath_6_0.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/jsonpath")]
     [ApiController]
     public class PortfolioController: ControllerBase
     {
-        private readonly IPortfolioRepository repository;
+        private readonly IPortfolioRepository _repository;
 
-        public PortfolioController(IPortfolioRepository _repository)
+        public PortfolioController(IPortfolioRepository repository)
         {
-            repository = _repository;
+            _repository = repository;
         }
 
         [HttpGet]
-        [Route("jsonpath")]
         public IActionResult GetPortfolios()
         {
-            var res = repository.GetPortfolios();
+            var res = _repository.GetPortfolios();
 
             return Ok(res);
         }
 
         [HttpPost]
-        [Route("jsonpath")]
         public IActionResult AddPortfolio([FromBody] portfolio item)
         {
-            repository.InsertPortfolio(item);
+            _repository.InsertPortfolio(item);
             return Ok();
         }
 
         [HttpPut]
-        [Route("jsonpath")]
         public IActionResult UpdatePortfolio([FromBody] portfolio item)
         {
-            repository.UpdatePortfolio(item);
+            _repository.UpdatePortfolio(item);
             return Ok();
         }
 
         [HttpDelete]
-        [Route("jsonpath")]
         public IActionResult RemovePortfolio([FromBody] int portfolioId)
         {
-            repository.DeletePortfolio(portfolioId);
+            _repository.DeletePortfolio(portfolioId);
             return Ok();
         }
 

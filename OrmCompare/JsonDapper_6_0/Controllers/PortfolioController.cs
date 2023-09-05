@@ -4,46 +4,42 @@ using JsonDapper_6_0.Models;
 
 namespace JsonDapper_6_0.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/dapper")]
     [ApiController]
     public class PortfolioController : ControllerBase
     {
-        private readonly IPortfolioRepository PortfolioRepository;
+        private readonly IPortfolioRepository portfolioRepository;
 
-        public PortfolioController(IPortfolioRepository _PortfolioRepository)
+        public PortfolioController(IPortfolioRepository _portfolioRepository)
         {
-            PortfolioRepository = _PortfolioRepository;
+            portfolioRepository = _portfolioRepository;
         }
 
         [HttpGet]
-        [Route("dapper")]
         public IActionResult PortfoliosListDapper()
         {
-            var res = PortfolioRepository.GetPortfolios();
+            var res = portfolioRepository.GetPortfolios();
             return Ok(res);
         }
 
         [HttpPut]
-        [Route("dapper")]
         public IActionResult PortfolioPutDapper([FromBody] Portfolio item)
         {
-            PortfolioRepository.UpdatePortfolio(item);
+            portfolioRepository.UpdatePortfolio(item);
             return Ok();
         }
 
         [HttpPost]
-        [Route("dapper")]
         public IActionResult PortfolioInsertDapper([FromBody] Portfolio item)
         {
-            PortfolioRepository.InsertPortfolio(item);
+            portfolioRepository.InsertPortfolio(item);
             return Ok();
         }
 
         [HttpDelete]
-        [Route("dapper")]
         public IActionResult PortfolioDeleteDapper([FromBody] int portfolioId)
         {
-            PortfolioRepository.DeletePortfolio(portfolioId);
+            portfolioRepository.DeletePortfolio(portfolioId);
             return Ok();
         }
     }

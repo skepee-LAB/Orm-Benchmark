@@ -8,16 +8,16 @@ namespace JsonPath_6_0.Services
 {
     public class PortfolioRepository:IPortfolioRepository
     {
-        private readonly MyContext myContext;
+        private readonly MyContext _myContext;
 
-        public PortfolioRepository(MyContext _myContext)
+        public PortfolioRepository(MyContext myContext)
         {
-            myContext = _myContext;
+            _myContext = myContext;
         }
 
         public void DeletePortfolio(int portfolioId)
         {
-            using (var conn = new SqlConnection(myContext._connectionString))
+            using (var conn = new SqlConnection(_myContext._connectionString))
             {
                 conn.Open();
 
@@ -33,7 +33,7 @@ namespace JsonPath_6_0.Services
         public string GetPortfolios()
         {
             string jsonres = string.Empty;
-            using (var conn = new SqlConnection(myContext._connectionString))
+            using (var conn = new SqlConnection(_myContext._connectionString))
             {
                 conn.Open();
 
@@ -54,7 +54,7 @@ namespace JsonPath_6_0.Services
 
         public void InsertPortfolio(portfolio item)
         {
-            using (var conn = new SqlConnection(myContext._connectionString))
+            using (var conn = new SqlConnection(_myContext._connectionString))
             {
                 var jsonItem = JsonConvert.SerializeObject(item);
                 conn.Open();
@@ -69,7 +69,7 @@ namespace JsonPath_6_0.Services
 
         public void UpdatePortfolio(portfolio item)
         {
-            using (var conn = new SqlConnection(myContext._connectionString))
+            using (var conn = new SqlConnection(_myContext._connectionString))
             {
                 var jsonItem = JsonConvert.SerializeObject(item);
                 conn.Open();

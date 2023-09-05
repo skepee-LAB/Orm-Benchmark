@@ -4,46 +4,42 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JsonEF_2_1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/ef2_1")]
     [ApiController]
     public class PortfolioController: ControllerBase
     {
-        private readonly IPortfolioRepository repository;
+        private readonly IPortfolioRepository _repository;
 
-        public PortfolioController(IPortfolioRepository _repository)
+        public PortfolioController(IPortfolioRepository repository)
         {
-            repository = _repository;
+            _repository = repository;
         }
 
         [HttpGet]
-        [Route("ef2_1")]
         public IActionResult GetPortfolios()
         {
-            var res = repository.GetPortfolios();
+            var res = _repository.GetPortfolios();
             return Ok(res);
         }
 
         [HttpPost]
-        [Route("ef2_1")]
         public IActionResult AddPortfolio([FromBody] portfolio item)
         {
-            repository.InsertPortfolio(item);
+            _repository.InsertPortfolio(item);
             return Ok();
         }
 
         [HttpPut]
-        [Route("ef2_1")]
         public IActionResult UpdatePortfolio([FromBody] portfolio item)
         {
-            repository.UpdatePortfolio(item);
+            _repository.UpdatePortfolio(item);
             return Ok();
         }
 
         [HttpDelete]
-        [Route("ef2_1")]
         public IActionResult RemovePortfolio([FromBody] int portfolioId)
         {
-            repository.DeletePortfolio(portfolioId);
+            _repository.DeletePortfolio(portfolioId);
             return Ok();
         }
 

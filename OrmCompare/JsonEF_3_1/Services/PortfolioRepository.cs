@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace JsonEF_3_1.Services
 {
-    public class PortfolioRepository:IPortfolioRepository
+    public class PortfolioRepository: IPortfolioRepository
     {
         private MyContext _myContext;
 
