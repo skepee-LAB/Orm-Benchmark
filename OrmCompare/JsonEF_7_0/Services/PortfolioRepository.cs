@@ -1,4 +1,5 @@
 ﻿using JsonEF_7_0.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace JsonEF_7_0.Services
 {
@@ -7,18 +8,19 @@ namespace JsonEF_7_0.Services
         private MyContext _myContext;
 
         public PortfolioRepository(MyContext myContext)
+
         {
             _myContext = myContext;
         }
 
-        public IEnumerable<portfolio> GetPortfolios()
+        public async Task<IEnumerable<portfolio>> GetPortfolios()
         {
-            return _myContext.portfolio.ToList();
+            return await _myContext.portfolio.ToListAsync();
         }
 
-        public void DeletePortfolio(int portfolioId)
+        public async Task DeletePortfolio(int portfolioId)
         {
-            var item = _myContext.portfolio.FirstOrDefault(x => x.PortfolioId == portfolioId);
+            var item = await _myContext.portfolio.FirstOrDefaultAsync(x => x.PortfolioId == portfolioId);
 
             if (item != null)
             {
@@ -27,21 +29,21 @@ namespace JsonEF_7_0.Services
             }
         }
 
-        public void InsertPortfolio(portfolio item)
+        public async Task InsertPortfolio(portfolio item)
         {
             if (item != null)
             {
-                _myContext.portfolio.Add(item);
-                _myContext.SaveChanges();
+                await _myContext.portfolio.AddAsync(item);
+                await _myContext.SaveChangesAsync();
             }
         }
 
-        public void UpdatePortfolio(portfolio item)
+        public async Task UpdatePortfolio(portfolio item)
         {
             if (item != null)
             {
                 _myContext.portfolio.Update(item);
-                _myContext.SaveChanges();
+                await _myContext.SaveChangesAsync();
             }
         }
     }

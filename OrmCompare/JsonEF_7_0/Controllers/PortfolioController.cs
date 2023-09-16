@@ -16,9 +16,9 @@ namespace JsonEF_7_0.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetPortfolios()
+        public async Task<IActionResult> GetPortfolios()
         {
-            var res = _repository.GetPortfolios();
+            var res = await _repository.GetPortfolios();
 
             return Ok(res);
         }
