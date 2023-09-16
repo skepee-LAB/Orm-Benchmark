@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JsonEF_7_0.Services
 {
-    public class PortfolioRepository:IPortfolioRepository
+    public class PortfolioRepository : IPortfolioRepository
     {
         private MyContext _myContext;
 
@@ -20,12 +20,12 @@ namespace JsonEF_7_0.Services
 
         public async Task DeletePortfolio(int portfolioId)
         {
-            var item = await _myContext.portfolio.FirstOrDefaultAsync(x => x.PortfolioId == portfolioId);
+            var item = _myContext.portfolio.FirstOrDefault(x => x.PortfolioId == portfolioId);
 
             if (item != null)
             {
                 _myContext.portfolio.Remove(item);
-                _myContext.SaveChanges();
+                await _myContext.SaveChangesAsync();
             }
         }
 
@@ -45,6 +45,12 @@ namespace JsonEF_7_0.Services
                 _myContext.portfolio.Update(item);
                 await _myContext.SaveChangesAsync();
             }
+        }
+
+        public async Task<portfolio> GetPortfolio(int portfolioId)
+        {
+            var x= await _myContext.portfolio.FirstOrDefaultAsync(x => x.PortfolioId == portfolioId);
+            return x;
         }
     }
 }
