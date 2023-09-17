@@ -1,6 +1,7 @@
 ﻿using JsonEF_5_0.Models;
 using JsonEF_5_0.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace JsonEF_5_0.Controllers
 {
@@ -16,30 +17,37 @@ namespace JsonEF_5_0.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetPortfolios()
+        public async Task<IActionResult> GetPortfolios()
         {
-            var res = _repository.GetPortfolios();
+            var res = await _repository.GetPortfolios();
+            return Ok(res);
+        }
+
+        [HttpGet("portfolio")]
+        public async Task<IActionResult> GetPortfolio([FromQuery(Name = "id")] int portfolioId)
+        {
+            var res = await _repository.GetPortfolio(portfolioId);
             return Ok(res);
         }
 
         [HttpPost]
-        public IActionResult AddPortfolio([FromBody] portfolio item)
+        public async Task<IActionResult> AddPortfolio([FromBody] portfolio item)
         {
-            _repository.InsertPortfolio(item);
+            await _repository.InsertPortfolio(item);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult UpdatePortfolio([FromBody] portfolio item)
+        public async Task<IActionResult> UpdatePortfolio([FromBody] portfolio item)
         {
-            _repository.UpdatePortfolio(item);
+            await _repository.UpdatePortfolio(item);
             return Ok();
         }
 
         [HttpDelete]
-        public IActionResult RemovePortfolio([FromBody] int portfolioId)
+        public async Task<IActionResult> RemovePortfolio([FromBody] int portfolioId)
         {
-            _repository.DeletePortfolio(portfolioId);
+            await _repository.DeletePortfolio(portfolioId);
             return Ok();
         }
     }
