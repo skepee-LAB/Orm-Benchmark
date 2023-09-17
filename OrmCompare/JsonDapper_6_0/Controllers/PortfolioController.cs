@@ -8,38 +8,45 @@ namespace JsonDapper_6_0.Controllers
     [ApiController]
     public class PortfolioController : ControllerBase
     {
-        private readonly IPortfolioRepository portfolioRepository;
+        private readonly IPortfolioRepository _repository;
 
-        public PortfolioController(IPortfolioRepository _portfolioRepository)
+        public PortfolioController(IPortfolioRepository repository)
         {
-            portfolioRepository = _portfolioRepository;
+            _repository = repository;
         }
 
         [HttpGet]
-        public IActionResult PortfoliosListDapper()
+        public async Task<IActionResult> GetPortfolios()
         {
-            var res = portfolioRepository.GetPortfolios();
+            var res = await _repository.GetPortfolios();
             return Ok(res);
         }
 
-        [HttpPut]
-        public IActionResult PortfolioPutDapper([FromBody] Portfolio item)
+        [HttpGet("portfolio")]
+        public async Task<IActionResult> GetPortfolio([FromQuery(Name = "id")] int portfolioId)
         {
-            portfolioRepository.UpdatePortfolio(item);
-            return Ok();
+            var res = await _repository.GetPortfolio(portfolioId);
+            return Ok(res);
         }
 
         [HttpPost]
-        public IActionResult PortfolioInsertDapper([FromBody] Portfolio item)
+        public async Task<IActionResult> AddPortfolio([FromBody] portfolio item)
         {
-            portfolioRepository.InsertPortfolio(item);
+            await _repository.InsertPortfolio(item);
+            return Ok();
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdatePortfolio([FromBody] portfolio item)
+        {
+            await _repository.UpdatePortfolio(item);
             return Ok();
         }
 
         [HttpDelete]
-        public IActionResult PortfolioDeleteDapper([FromBody] int portfolioId)
+        public async Task<IActionResult> RemovePortfolio([FromBody] int portfolioId)
         {
-            portfolioRepository.DeletePortfolio(portfolioId);
+            await _repository.DeletePortfolio(portfolioId);
             return Ok();
         }
     }

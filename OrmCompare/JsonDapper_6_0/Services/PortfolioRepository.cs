@@ -13,53 +13,43 @@ namespace JsonDapper_6_0.Services
             _myContext = myContext;
         }
 
-        public void DeletePortfolio(int portfolioId)
+        public async Task DeletePortfolio(int portfolioId)
         {
             using (var conn = _myContext.CreateConnection())
             {
-                conn.Query<Portfolio>("PortfolioDel", new { portfolioId=portfolioId }, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                await conn.ExecuteAsync("PortfolioDel", new { portfolioId }, commandType: CommandType.StoredProcedure);
             }
         }
 
-        public IEnumerable<Portfolio> GetPortfolios()
+        public async Task<IEnumerable<portfolio>> GetPortfolios()
         {
             using (var conn = _myContext.CreateConnection())
             {
-                var res = conn.Query<Portfolio>("PortfolioList", commandType: CommandType.StoredProcedure).AsEnumerable();
-                return res;
+                return await conn.QueryAsync<portfolio>("PortfolioList", commandType: CommandType.StoredProcedure);
             }
         }
 
-        public void InsertPortfolio(Portfolio item)
+        public async Task InsertPortfolio(portfolio item)
         {
             using (var conn = _myContext.CreateConnection())
             {
-                var values = new
-                {
-                    portfolioCode = item.PortfolioCode,
-                    portfolioName = item.PortfolioName,
-                    portfolioType = item.PortfolioType,
-                    portfolioStatus = item.PortfolioStatus
-                };
-
-                conn.Query<Portfolio>("PortfolioIns", values, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                await conn.ExecuteAsync("PortfolioIns", item, commandType: CommandType.StoredProcedure);
             }
         }
 
-        public void UpdatePortfolio(Portfolio item)
+        public async Task UpdatePortfolio(portfolio item)
         {
             using (var conn = _myContext.CreateConnection())
             {
-                var values = new
-                {
-                    portfolioId = item.PortfolioId,
-                    portfolioCode = item.PortfolioCode,
-                    portfolioName = item.PortfolioName,
-                    portfolioType = item.PortfolioType,
-                    portfolioStatus = item.PortfolioStatus
-                };
+                await conn.ExecuteAsync("PortfolioUpd", item, commandType: CommandType.StoredProcedure);
+            }
+        }
 
-                conn.Query<Portfolio>("PortfolioUpd", values, commandType: CommandType.StoredProcedure).FirstOrDefault();
+        public async Task<portfolio> GetPortfolio(int portfolioId)
+        {
+            using (var conn = _myContext.CreateConnection())
+            {
+                return await conn.QueryFirstOrDefaultAsync<portfolio>("PortfolioGet", new { portfolioId }, commandType: CommandType.StoredProcedure);
             }
         }
     }

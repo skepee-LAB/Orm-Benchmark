@@ -2,7 +2,7 @@
 
 namespace JsonDapper_6_0.Models
 {
-    public class Portfolio
+    public class portfolio
     {
         [Key]
         public int PortfolioId { get; set; }
