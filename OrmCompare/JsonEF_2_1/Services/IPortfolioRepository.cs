@@ -8,10 +8,11 @@ namespace JsonEF_2_1.Services
 {
     public interface IPortfolioRepository
     {
-        IEnumerable<portfolio> GetPortfolios();
-        void InsertPortfolio(portfolio item);
-        void UpdatePortfolio(portfolio item);
-        void DeletePortfolio(int portfolioId);
+        Task<IEnumerable<portfolio>> GetPortfolios();
+        Task InsertPortfolio(portfolio item);
+        Task UpdatePortfolio(portfolio item);
+        Task DeletePortfolio(int portfolioId);
+        Task<portfolio> GetPortfolio(int portfolioId);
 
     }
 }

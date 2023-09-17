@@ -49,8 +49,7 @@ namespace JsonEF_7_0.Services
 
         public async Task<portfolio> GetPortfolio(int portfolioId)
         {
-            var x= await _myContext.portfolio.FirstOrDefaultAsync(x => x.PortfolioId == portfolioId);
-            return x;
+            return await _myContext.portfolio.FirstOrDefaultAsync(x => x.PortfolioId == portfolioId);           
         }
     }
 }

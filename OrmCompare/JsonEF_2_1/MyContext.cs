@@ -5,7 +5,7 @@ namespace JsonEF_2_1
 {
     public class MyContext: DbContext
     {
-        public DbSet<portfolio> Portfolio { get; set; }
+        public DbSet<portfolio> portfolio { get; set; }
 
 
 

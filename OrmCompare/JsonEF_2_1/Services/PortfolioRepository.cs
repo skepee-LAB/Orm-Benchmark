@@ -1,6 +1,8 @@
 ﻿using JsonEF_2_1.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace JsonEF_2_1.Services
 {
@@ -13,38 +15,43 @@ namespace JsonEF_2_1.Services
             _myContext = myContext;
         }
 
-        public IEnumerable<portfolio> GetPortfolios()
+        public async Task<IEnumerable<portfolio>> GetPortfolios()
         {
-            return _myContext.Portfolio.AsEnumerable();
+            return await _myContext.portfolio.ToListAsync();
         }
 
-        public void DeletePortfolio(int portfolioId)
+        public async Task DeletePortfolio(int portfolioId)
         {
-            var item = _myContext.Portfolio.FirstOrDefault(x => x.PortfolioId == portfolioId);
+            var item = _myContext.portfolio.FirstOrDefault(x => x.PortfolioId == portfolioId);
 
             if (item != null)
             {
-                _myContext.Portfolio.Remove(item);
-                _myContext.SaveChanges();
+                _myContext.portfolio.Remove(item);
+                await _myContext.SaveChangesAsync();
             }
         }
 
-        public void InsertPortfolio(portfolio item)
+        public async Task InsertPortfolio(portfolio item)
         {
             if (item != null)
             {
-                _myContext.Portfolio.Add(item);
-                _myContext.SaveChanges();
+                await _myContext.portfolio.AddAsync(item);
+                await _myContext.SaveChangesAsync();
             }
         }
 
-        public void UpdatePortfolio(portfolio item)
+        public async Task UpdatePortfolio(portfolio item)
         {
             if (item != null)
             {
-                _myContext.Portfolio.Update(item);
-                _myContext.SaveChanges();
+                _myContext.portfolio.Update(item);
+                await _myContext.SaveChangesAsync();
             }
+        }
+
+        public async Task<portfolio> GetPortfolio(int portfolioId)
+        {
+            return await _myContext.portfolio.FirstOrDefaultAsync(x => x.PortfolioId == portfolioId);
         }
     }
 }
