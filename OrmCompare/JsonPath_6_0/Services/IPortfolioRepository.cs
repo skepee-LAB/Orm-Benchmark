@@ -4,10 +4,10 @@ namespace JsonPath_6_0.Services
 {
     public interface IPortfolioRepository
     {
-        string GetPortfolios();
-        void InsertPortfolio(portfolio item);
-        void UpdatePortfolio(portfolio item);
-        void DeletePortfolio(int portfolioId);
-
+        Task<string> GetPortfolios();
+        Task InsertPortfolio(portfolio item);
+        Task UpdatePortfolio(portfolio item);
+        Task DeletePortfolio(int portfolioId);
+        Task<string> GetPortfolio(int portfolioId);
     }
 }
