@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkEF_7", "BenchmarkE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkDapper", "BenchmarkDapper\BenchmarkDapper.csproj", "{C4C95AEA-C22D-4740-A8A2-1A6AE29E28A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkJsonPath", "BenchmarkJsonPath\BenchmarkJsonPath.csproj", "{436B9641-CDFD-42C3-91FD-AFE95A0F357C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{C4C95AEA-C22D-4740-A8A2-1A6AE29E28A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4C95AEA-C22D-4740-A8A2-1A6AE29E28A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4C95AEA-C22D-4740-A8A2-1A6AE29E28A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{436B9641-CDFD-42C3-91FD-AFE95A0F357C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436B9641-CDFD-42C3-91FD-AFE95A0F357C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436B9641-CDFD-42C3-91FD-AFE95A0F357C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436B9641-CDFD-42C3-91FD-AFE95A0F357C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

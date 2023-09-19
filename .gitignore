@@ -61,3 +61,5 @@
 /OrmCompare/BenchmarkEF_7/obj
 /OrmCompare/BenchmarkDapper/bin/Release/net6.0
 /OrmCompare/BenchmarkDapper/obj
+/OrmCompare/BenchmarkJsonPath/bin/Release/net6.0
+/OrmCompare/BenchmarkJsonPath/obj
