@@ -59,3 +59,5 @@
 /OrmCompare/BenchmarkEF_5/obj
 /OrmCompare/BenchmarkEF_7/bin/Release/net6.0
 /OrmCompare/BenchmarkEF_7/obj
+/OrmCompare/BenchmarkDapper/bin/Release/net6.0
+/OrmCompare/BenchmarkDapper/obj

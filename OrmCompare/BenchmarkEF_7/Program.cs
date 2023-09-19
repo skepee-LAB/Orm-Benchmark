@@ -2,8 +2,6 @@
 using BenchmarkDotNet.Running;
 using BenchmarkEF7;
 
-Console.WriteLine("Hello, World!");
-
 Console.WriteLine("Starting Benchmark EF 7");
 var res = BenchmarkRunner.Run<Benchmark>();
 Console.WriteLine("Completed Benchmark EF 7");
