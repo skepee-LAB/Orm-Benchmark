@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonPath_6_0", "JsonPath_6_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonEF_7_0", "JsonEF_7_0\JsonEF_7_0.csproj", "{8FA09635-5C29-4A74-9191-747B4316607F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkEF_3_1", "BenchmarkEF_3_1\BenchmarkEF_3_1.csproj", "{20FB0D34-DED9-4845-A0DB-D68625DEBEBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkEF_3_1", "BenchmarkEF_3_1\BenchmarkEF_3_1.csproj", "{20FB0D34-DED9-4845-A0DB-D68625DEBEBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkEF_6", "BenchmarkEF\BenchmarkEF_6.csproj", "{AA442E23-494A-4FDA-BC93-96415916FE6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +66,10 @@ Global
 		{20FB0D34-DED9-4845-A0DB-D68625DEBEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20FB0D34-DED9-4845-A0DB-D68625DEBEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20FB0D34-DED9-4845-A0DB-D68625DEBEBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA442E23-494A-4FDA-BC93-96415916FE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA442E23-494A-4FDA-BC93-96415916FE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA442E23-494A-4FDA-BC93-96415916FE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA442E23-494A-4FDA-BC93-96415916FE6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
