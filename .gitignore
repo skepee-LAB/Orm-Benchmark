@@ -46,3 +46,10 @@
 /OrmCompare/JsonPath_6_0/bin/Release/net6.0
 /OrmCompare/JsonEF_7_0/obj
 /OrmCompare/JsonEF_7_0/bin
+/OrmCompare/BenchmarkDotNet.Artifacts
+/OrmCompare/Benchmark_EF6/BenchmarkDotNet.Artifacts
+/OrmCompare/Benchmark_EF6/bin/Debug/net6.0
+/OrmCompare/Benchmark_EF6/bin/Release/net6.0
+/OrmCompare/Benchmark_EF6/obj
+/OrmCompare/BenchmarkEF_3_1/bin/Release/netcoreapp3.1
+/OrmCompare/BenchmarkEF_3_1/obj
