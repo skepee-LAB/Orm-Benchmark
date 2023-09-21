@@ -43,8 +43,8 @@ namespace JsonEF_7_0.Controllers
             return Ok();
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> RemovePortfolio([FromBody] int portfolioId)
+        [HttpDelete("portfolio")]
+        public async Task<IActionResult> RemovePortfolio([FromQuery(Name = "id")] int portfolioId)
         {
             await _repository.DeletePortfolio(portfolioId);
             return Ok();
