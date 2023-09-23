@@ -19,7 +19,7 @@ namespace BenchmarkDapper
         }
 
         [Benchmark]
-        public void EF6_GetSingle()
+        public void EFDapper_GetSingle()
         {
             int portfolioId = 100;
             using (_connection = new SqlConnection(_connectionstring))
@@ -29,7 +29,7 @@ namespace BenchmarkDapper
         }
 
         [Benchmark]
-        public void EF6_GetList()
+        public void EFDapper_GetList()
         {
             using (_connection = new SqlConnection(_connectionstring))
             {
