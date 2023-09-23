@@ -32,6 +32,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkJsonPath", "Benchm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonEF_8_0", "JsonEF_8_0\JsonEF_8_0.csproj", "{3270215E-35E0-42F1-A38B-374B9B2CF61A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkEF_8", "BenchmarkEF_8\BenchmarkEF_8.csproj", "{D233610D-6139-4FD0-B6BF-246EE67682A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +102,10 @@ Global
 		{3270215E-35E0-42F1-A38B-374B9B2CF61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3270215E-35E0-42F1-A38B-374B9B2CF61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3270215E-35E0-42F1-A38B-374B9B2CF61A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D233610D-6139-4FD0-B6BF-246EE67682A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D233610D-6139-4FD0-B6BF-246EE67682A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D233610D-6139-4FD0-B6BF-246EE67682A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D233610D-6139-4FD0-B6BF-246EE67682A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

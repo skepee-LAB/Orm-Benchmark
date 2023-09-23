@@ -65,3 +65,5 @@
 /OrmCompare/BenchmarkJsonPath/obj
 /OrmCompare/JsonEF_8_0/bin
 /OrmCompare/JsonEF_8_0/obj
+/OrmCompare/BenchmarkEF_8/bin/Release/net8.0
+/OrmCompare/BenchmarkEF_8/obj
