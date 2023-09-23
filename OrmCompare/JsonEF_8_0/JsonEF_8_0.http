@@ -1,0 +1,6 @@
+@JsonEF_8_0_HostAddress = http://localhost:5057
+
+GET {{JsonEF_8_0_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
