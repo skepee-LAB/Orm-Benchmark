@@ -17,14 +17,14 @@ namespace BenchmarkEF8
         }
 
         [Benchmark]
-        public void EF7_GetSingle()
+        public void EF8_GetSingle()
         {
             var context = new JsonEF_8_0.MyContext(_contextOptions);
             _ = context.portfolio.FirstOrDefault();
         }
 
         [Benchmark]
-        public void EF7_GetList()
+        public void EF8_GetList()
         {
             var context = new JsonEF_8_0.MyContext(_contextOptions);
             _ = context.portfolio.ToList();
