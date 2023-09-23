@@ -18,7 +18,7 @@ namespace BenchmarkJsonPath
         }
 
         [Benchmark]
-        public void EF6_GetSingle()
+        public void JsonPath_GetSingle()
         {
             int portfolioId = 100;
             using (_connection = new SqlConnection(_connectionstring))
@@ -42,7 +42,7 @@ namespace BenchmarkJsonPath
         }
 
         [Benchmark]
-        public void EF6_GetList()
+        public void JsonPath_GetList()
         {
             using (_connection = new SqlConnection(_connectionstring))
             {
